@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: devops/docker
+      dockerfile: Dockerfile
+    image: api-styles/jrpc
+    container_name: jrpc
+    hostname: jrpc
+    environment:
+      - PORT=4000
+      - HOST=0.0.0.0
+    volumes:
+      - ./src:/usr/src/jrpc
